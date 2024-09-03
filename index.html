@@ -5,29 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cup Time - время кофе</title>
     <link rel="icon" href="image/icon.svg" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body style="background-color: peachpuff">
+  <body>
     <header class="header">
-      <div class="container">
+      <div class="container header__container">
         <a class="header__logo-link">
           <img
             class="header__logo"
             src="image/logo.svg"
             alt="Логотип CupTime"
           />
-          <nav class="header__nav">
-            <ul class="header__menu">
-              <li class="header__menu-item">
-                <a class="header__menu-link" href="#">Чай</a>
-                <a class="header__menu-link" href="#"> Кофе</a>
-                <a class="header__menu-link" href="#">Чайники </a>
-                <a class="header__menu-link" href="#"> Турки</a>
-                <a class="header__menu-link" href="#">Прочее</a>
-              </li>
-            </ul>
-            <a href="cart.html" class="header__cart-link">6</a>
-          </nav>
         </a>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="#">Чай</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#"> Кофе</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">Чайники</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#"> Турки</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">Прочее</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="cart.html" class="header__cart-link">6</a>
       </div>
     </header>
 
@@ -52,8 +62,10 @@
                   alt="Кокосовая матча"
                   class="product__img"
                 />
-                <h3 class="product__title">Кокосовая матча</h3>
-                <p class="product__price">390 ₽</p>
+                <div class="product__content">
+                  <h3 class="product__title">Кокосовая матча</h3>
+                  <p class="product__price">390 ₽</p>
+                </div>
               </article>
             </li>
             <li class="products__item">
@@ -63,8 +75,10 @@
                   alt="Зеленый индонезийский чай"
                   class="product__img"
                 />
-                <h3 class="product__title">Зеленый индонезийский чай</h3>
-                <p class="product__price">340 ₽</p>
+                <div class="product__content">
+                  <h3 class="product__title">Зеленый индонезийский чай</h3>
+                  <p class="product__price">340 ₽</p>
+                </div>
               </article>
             </li>
             <li class="products__item">
@@ -74,8 +88,10 @@
                   alt="Черный чай из Эфиопии"
                   class="product__img"
                 />
-                <h3 class="product__title">Черный чай из Эфиопии</h3>
-                <p class="product__price">380 ₽</p>
+                <div class="product__content">
+                  <h3 class="product__title">Черный чай из Эфиопии</h3>
+                  <p class="product__price">380 ₽</p>
+                </div>
               </article>
             </li>
             <li class="products__item">
@@ -85,8 +101,10 @@
                   alt="Черный чай из Калифорнии"
                   class="product__img"
                 />
-                <h3 class="product__title">Черный чай из Калифорнии</h3>
-                <p class="product__price">360 ₽</p>
+                <div class="product__content">
+                  <h3 class="product__title">Черный чай из Калифорнии</h3>
+                  <p class="product__price">360 ₽</p>
+                </div>
               </article>
             </li>
             <li class="products__item">
@@ -96,8 +114,10 @@
                   alt="Органическая веганская матча"
                   class="product__img"
                 />
-                <h3 class="product__title">Органическая веганская матча</h3>
-                <p class="product__price">380 ₽</p>
+                <div class="product__content">
+                  <h3 class="product__title">Органическая веганская матча</h3>
+                  <p class="product__price">380 ₽</p>
+                </div>
               </article>
             </li>
             <li class="products__item">
@@ -107,8 +127,10 @@
                   alt="Чай черный Лакандона"
                   class="product__img"
                 />
-                <h3 class="product__title">Чай черный Лакандона</h3>
-                <p class="product__price">390 ₽</p>
+                <div class="product__content">
+                  <h3 class="product__title">Чай черный Лакандона</h3>
+                  <p class="product__price">390 ₽</p>
+                </div>
               </article>
             </li>
           </ul>
@@ -119,22 +141,33 @@
     <footer class="footer">
       <div class="container footer__container">
         <a class="footer__logo-link">
-          <img class="footer__logo" src="image/logo.svg" alt="Логотип Cup Time"
+          <img
+            class="footer__logo"
+            src="image/logo.svg"
+            alt="Логотип Cup Time"
+          />
         </a>
         <div class="footer__nav">
           <ul class="footer__menu">
             <li class="footer__menu-item">
               <a class="footer__menu-link" href="#">Чай</a>
+            </li>
+            <li class="footer__menu-item">
               <a class="footer__menu-link" href="#"> Кофе</a>
+            </li>
+            <li class="footer__menu-item">
               <a class="footer__menu-link" href="#">Чайники </a>
+            </li>
+            <li class="footer__menu-item">
               <a class="footer__menu-link" href="#"> Турки</a>
+            </li>
+            <li class="footer__menu-item">
               <a class="footer__menu-link" href="#">Прочее</a>
             </li>
           </ul>
         </div>
         <div class="footer__info">
           <p class="footer__copyright">©CUPTIME, 2024</p>
-          <p class="footer__description"></p>
           <ul class="footer__developers">
             <li class="footer__developer">
               Designer:
@@ -142,7 +175,12 @@
             </li>
             <li class="footer__developer">
               Developer:
-              <a href="#" class="footer__developer-link">Maksim Litvinov</a>
+              <a
+                href="https://t.me/maksimlitvinov_v"
+                target="_blank"
+                class="footer__developer-link"
+                >Maksim Litvinov</a
+              >
             </li>
           </ul>
         </div>
