@@ -22,13 +22,16 @@ const FOOTER_ICONS_DATA = [
 export function Footer() {
   return (
     <footer className="bg-teal-500 text-white">
-      <div className="flex flex-col gap-10 py-10 px-4 sm:px-12">
+      <div className="mx-auto container max-w-[1400px] flex flex-col md:grid grid-cols-2 gap-10 py-10 px-4 sm:px-12">
         <CupTimeLogo />
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-4 md:flex-row md:gap-6 lg:gap-12">
           {HEADER_DATA.map((item) => (
-            <li key={item.id}>{item.title}</li>
+            <li key={item.id}>
+              <a href="#">{item.title}</a>
+            </li>
           ))}
         </ul>
+
         <div className="flex flex-col gap-4">
           <a href="mailto:CUPTIME@gmail.com">CUPTIME@gmail.com</a>
           <ul className="flex gap-4 items-center">

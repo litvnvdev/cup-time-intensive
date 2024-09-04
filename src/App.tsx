@@ -1,14 +1,14 @@
-import { Layout } from "./app/layout";
+import { HomePage } from "./pages/home-page";
 import { Footer } from "./widgets/footer";
 import { Header } from "./widgets/header";
 
 function App() {
   return (
-    <Layout>
+    <div>
       <Header />
-      <main className="min-h-[35dvh]">Main content</main>
+      <HomePage />
       <Footer />
-    </Layout>
+    </div>
   );
 }
 
