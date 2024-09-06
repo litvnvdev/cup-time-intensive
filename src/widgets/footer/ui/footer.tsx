@@ -21,7 +21,7 @@ const FOOTER_ICONS_DATA = [
 
 export function Footer() {
   return (
-    <footer className="bg-teal-500 text-white">
+    <footer className="bg-teal-500 text-white min-h-full">
       <div className="mx-auto container max-w-[1400px] grid grid-cols-1 md:grid-rows-2 gap-10 py-10 px-4 sm:px-12">
         <div className="flex flex-col gap-4 md:flex-row md:justify-between">
           <CupTimeLogo />

@@ -7,7 +7,7 @@ export function HomePage() {
     <div>
       <Hero />
       <Layout>
-        <ProductList />
+        <ProductList title="Чай" />
       </Layout>
     </div>
   );

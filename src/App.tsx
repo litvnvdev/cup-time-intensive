@@ -1,14 +1,20 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/home-page";
 import { Footer } from "./widgets/footer";
 import { Header } from "./widgets/header";
+import { Cart } from "./pages/cart";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Header />
-      <HomePage />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<p>Not found</p>} />
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 
