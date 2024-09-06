@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/home-page";
 import { Footer } from "./widgets/footer";
 import { Header } from "./widgets/header";
@@ -9,7 +9,8 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Navigate to="/products?category=tea" />} />
+        <Route path="/products" element={<HomePage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<p>Not found</p>} />
       </Routes>
