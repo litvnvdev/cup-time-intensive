@@ -1,10 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { CupTimeLogo, MobileHeader } from "..";
 import { HEADER_DATA } from "../../../shared/consts";
 import { useMediaQuery } from "../../../shared/hooks/useMediaQuery";
 
 export function Header() {
   const isMobile = useMediaQuery("(max-width: 640px)");
+
+  const [searchParams] = useSearchParams();
+
+  const currentCategoryfromUrl = searchParams.get("category");
+
+  const getActiveCategory = (category: string) => {
+    return currentCategoryfromUrl === category ? "text-violet-800" : "";
+  };
   return (
     <header className="w-full text-white bg-teal-500 fixed top-0">
       <div className="mx-auto container max-w-[1400px] flex justify-between items-center py-3 px-4 sm:px-12">
@@ -18,7 +26,10 @@ export function Header() {
             ) : (
               <ul className="flex items-center gap-6 lg:gap-12">
                 {HEADER_DATA.map((item) => (
-                  <li key={item.id}>
+                  <li
+                    key={item.id}
+                    className={getActiveCategory(item.category)}
+                  >
                     <Link to={item.link}>{item.title}</Link>
                   </li>
                 ))}

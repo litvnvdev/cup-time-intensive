@@ -2,27 +2,32 @@ export const HEADER_DATA = [
   {
     id: 1,
     title: "Чай",
-    link: "tea",
+    category: "tea",
+    link: "/products?category=tea",
   },
   {
     id: 2,
     title: "Кофе",
-    link: "coffee",
+    category: "coffee",
+    link: "/products?category=coffee",
   },
   {
     id: 3,
     title: "Чайники",
-    link: "dummies",
+    category: "teapots",
+    link: "/products?category=teapots",
   },
   {
     id: 4,
     title: "Турки",
-    link: "coffee_pots",
+    category: "cezves",
+    link: "/products?category=cezves",
   },
   {
     id: 5,
     title: "Прочее",
-    link: "other",
+    category: "other",
+    link: "/products?category=other",
   },
 ];
 

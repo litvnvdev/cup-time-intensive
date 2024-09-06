@@ -1,18 +1,36 @@
+import { useEffect } from "react";
 import { ProductCard } from "../../../entities/product-card/ui/product-card";
-import { PRODUCTS_DATA } from "../../../shared/consts";
 import { Title } from "../../../shared/ui/title";
+import { useProducts } from "../../../app/context/product/product-context";
+import { useSearchParams } from "react-router-dom";
+import { HEADER_DATA } from "../../../shared/consts";
 
 interface ProductListProps {
-  title: string;
   btn?: React.ReactNode;
+  title?: string;
 }
 
-export function ProductList({ title, btn }: ProductListProps) {
+export function ProductList({ btn, title }: ProductListProps) {
+  const { products, setCategory } = useProducts();
+  const [searchParams] = useSearchParams();
+
+  const category = searchParams.get("category");
+
+  const displayCurrentCategory = (category: string | null) => {
+    const newCategory = HEADER_DATA.find((item) => item.category === category);
+    return newCategory?.title;
+  };
+  const productCategory = displayCurrentCategory(category);
+
+  useEffect(() => {
+    setCategory(category);
+  }, [setCategory, category]);
+
   return (
     <div className="py-10 px-4 sm:px-12 flex flex-col gap-6">
-      <Title>{title}</Title>
+      <Title>{productCategory || title}</Title>
       <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:gap-5">
-        {PRODUCTS_DATA.map((product) => (
+        {products?.map((product: any) => (
           <ProductCard key={product.id} {...product} btn={btn} />
         ))}
       </div>

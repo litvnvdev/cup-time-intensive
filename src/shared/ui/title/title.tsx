@@ -1,5 +1,5 @@
 interface TitleProps {
-  children: string;
+  children?: string | null;
 }
 
 export function Title({ children }: TitleProps) {
