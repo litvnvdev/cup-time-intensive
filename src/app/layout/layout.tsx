@@ -3,5 +3,5 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
-  return <div className="mx-auto container max-w-[1400px]">{children}</div>;
+  return <main className="mx-auto container max-w-[1400px]">{children}</main>;
 }
