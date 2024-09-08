@@ -1,6 +1,15 @@
-export function Button({ children }: { children: string }) {
+export function Button({
+  children,
+  onClick,
+}: {
+  children: string;
+  onClick?: () => void;
+}) {
   return (
-    <button className="cursor-pointer bg-inherit border border-violet-700 text-violet-700 rounded py-3 px-4 font-normal">
+    <button
+      onClick={onClick}
+      className="cursor-pointer bg-inherit border border-violet-700 text-violet-700 rounded py-3 px-4 font-normal"
+    >
       {children}
     </button>
   );

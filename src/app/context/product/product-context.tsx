@@ -2,16 +2,18 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { API_URL } from "../../../shared/api/base";
 
-interface IProduct {
+export interface IProduct {
   id: number;
   title: string;
   img: string;
   price: number;
+  quantity?: number;
+  additional?: any;
 }
 
-interface IProductContext {
-  children: React.ReactNode;
-  products?: IProduct[] | undefined;
+export interface IProductContext {
+  children?: React.ReactNode;
+  products?: IProduct[];
   category?: string;
   setCategory?: () => void;
   setProducts?: () => void;
