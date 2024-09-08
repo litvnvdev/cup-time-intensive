@@ -1,7 +1,6 @@
 import { Layout } from "../../../app/layout";
-import { AddToCart } from "../../../features/cart";
+import { CartContent } from "../../../widgets/cart";
 import { Order } from "../../../widgets/order";
-import { ProductList } from "../../../widgets/products-list";
 
 export function Cart() {
   return (
@@ -18,7 +17,7 @@ export function Cart() {
             </button>
           </div>
         </div>
-        <ProductList title="Корзина (6)" btn={<AddToCart />} />
+        <CartContent title="Корзина" />
       </section>
       <Order />
     </Layout>
