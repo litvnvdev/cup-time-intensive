@@ -1,7 +1,9 @@
+import { Button } from "../../../shared/ui/button";
+
 interface AddToCartProps {
   quantity?: number;
-  incrementQuantity: (quantity: number) => void;
-  decrementQuantity: (quantity: number) => void;
+  incrementQuantity: () => void;
+  decrementQuantity: () => void;
 }
 
 export function AddToCart({
@@ -9,30 +11,11 @@ export function AddToCart({
   incrementQuantity,
   decrementQuantity,
 }: AddToCartProps) {
-  const handleIncreaseQuantity = (quantity: any) => {
-    incrementQuantity(quantity + 1);
-  };
-  const handleDecreaseQuantity = (quantity: any) => {
-    if (quantity > 1) {
-      decrementQuantity(quantity - 1);
-    }
-  };
-  // TODO: move butoon to shared/ui/button
   return (
     <div className="flex gap-2 items-center">
-      <button
-        onClick={handleIncreaseQuantity}
-        className="flex justify-center items-center rounded border border-violet-700 px-2 text-violet-700 font-normal text-xl"
-      >
-        +
-      </button>
+      <Button onClick={incrementQuantity}>+</Button>
       <p className="text-lg">{quantity}</p>
-      <button
-        onClick={handleDecreaseQuantity}
-        className="flex justify-center items-center rounded border border-violet-700 px-2  text-violet-700 font-normal text-xl"
-      >
-        -
-      </button>
+      <Button onClick={decrementQuantity}>-</Button>
     </div>
   );
 }
