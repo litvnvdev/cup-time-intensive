@@ -2,11 +2,16 @@ import { Link, useSearchParams } from "react-router-dom";
 import { CupTimeLogo, MobileHeader } from "..";
 import { HEADER_DATA } from "../../../shared/consts";
 import { useMediaQuery } from "../../../shared/hooks/useMediaQuery";
+import { useContext } from "react";
+import {
+  CartContext,
+  CartContextType,
+} from "../../../app/context/cart/cart-context";
 
 export function Header() {
   const isMobile = useMediaQuery("(max-width: 640px)");
-
   const [searchParams] = useSearchParams();
+  const { cart } = useContext(CartContext) as CartContextType;
 
   const currentCategoryfromUrl = searchParams.get("category");
 
@@ -40,7 +45,7 @@ export function Header() {
             to="/cart"
             className="bg-[url('/src/widgets/header/ui/images/bag.svg')] bg-center bg-no-repeat w-7 h-7 text-sm text-center text-violet-600 py-2 px-1"
           >
-            6
+            {cart.length}
           </Link>
         </div>
       </div>
